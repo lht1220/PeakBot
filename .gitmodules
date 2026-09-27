@@ -1,0 +1,6 @@
+[submodule "source/PeakBot"]
+	path = source/PeakBot
+	url = https://github.com/christophuv/PeakBot.git
+[submodule "source/PeakBot_Example"]
+	path = source/PeakBot_Example
+	url = https://github.com/christophuv/PeakBot_Example.git

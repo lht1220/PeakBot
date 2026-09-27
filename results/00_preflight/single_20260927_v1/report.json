@@ -1,0 +1,106 @@
+{
+  "protocol": "peakbot-raw-input-qualification-v1",
+  "created_at_utc": "2026-09-27T11:15:50.193449+00:00",
+  "scope": "raw XML metadata; ZIP/directory scans ALL supplied sample metadata",
+  "labels_read": false,
+  "split_files_read": false,
+  "intensity_arrays_decoded": false,
+  "model_inference_run": false,
+  "test_metrics_computed": false,
+  "archive_identity": null,
+  "repository": {
+    "sources": [
+      {
+        "source": "PeakBot",
+        "commit": "c5df4f0d12db5165cd8714bebbe8941cc4c8bfc5",
+        "expected_commit": "c5df4f0d12db5165cd8714bebbe8941cc4c8bfc5",
+        "dirty": false,
+        "passed": true
+      },
+      {
+        "source": "PeakBot_Example",
+        "commit": "24ff3e2561018a2a71584c2cccbb42a154188012",
+        "expected_commit": "24ff3e2561018a2a71584c2cccbb42a154188012",
+        "dirty": false,
+        "passed": true
+      }
+    ],
+    "weights": [
+      {
+        "name": "MTBLS1358",
+        "sha256": "61c4ffa18e839ff37a2664052f23ee751608e61ca00d9e6f484b94fcdb15170d",
+        "expected_sha256": "61c4ffa18e839ff37a2664052f23ee751608e61ca00d9e6f484b94fcdb15170d",
+        "passed": true
+      },
+      {
+        "name": "MTBLS797",
+        "sha256": "d3410aa1ef92e1b552130035c44a2bd705ce68610ae22ac1aac9c37fbf19ddbc",
+        "expected_sha256": "d3410aa1ef92e1b552130035c44a2bd705ce68610ae22ac1aac9c37fbf19ddbc",
+        "passed": true
+      },
+      {
+        "name": "MTBLS868",
+        "sha256": "b09207a98b5b7fcc9c650748cd54a1181c76cfc95190be7caffce350f84602ae",
+        "expected_sha256": "b09207a98b5b7fcc9c650748cd54a1181c76cfc95190be7caffce350f84602ae",
+        "passed": true
+      },
+      {
+        "name": "PHM",
+        "sha256": "d54faa80649cb5d10dc1f387c886cccd36993fb7cc19511d2413410fe4881659",
+        "expected_sha256": "d54faa80649cb5d10dc1f387c886cccd36993fb7cc19511d2413410fe4881659",
+        "passed": true
+      },
+      {
+        "name": "WheatEar",
+        "sha256": "b209fb06133d61d618280194967662e4452d61a1d1ea2e4df69b7e268188a684",
+        "expected_sha256": "b209fb06133d61d618280194967662e4452d61a1d1ea2e4df69b7e268188a684",
+        "passed": true
+      }
+    ],
+    "passed": true
+  },
+  "files": [
+    {
+      "name": "E:\\论文\\PeakBot_可复现性核实_2026-09-26\\data\\smoke\\161010_10_Stich_14_T.mzML",
+      "sha256": "92f875cdae1deb41800723f674757bcb820b6fe01fa6137ba82df2bcfdcf8ae7",
+      "declared_spectra": 2524,
+      "parsed_spectra": 2524,
+      "ms_level_counts": {
+        "1": 2524
+      },
+      "unknown_ms_level_count": 0,
+      "ms1_spectrum_mode_counts": {
+        "centroid": 2524
+      },
+      "ms1_time_unit_counts": {
+        "UO:0000031": 2524
+      },
+      "ms1_missing_or_invalid_time_count": 0,
+      "ms1_non_increasing_time_count": 0,
+      "rt_min_seconds": 0.221198658,
+      "rt_max_seconds": 1471.0023,
+      "peak_picking_processing_steps": 1,
+      "profile_mode_gate": false,
+      "metadata_integrity_gate": true
+    }
+  ],
+  "errors": [],
+  "summary": {
+    "status": "BLOCKED",
+    "file_count": 1,
+    "profile_file_count": 0,
+    "centroid_file_count": 1,
+    "metadata_integrity_passed": true,
+    "native_peakbot_inference_allowed": false,
+    "blocking_reasons": [
+      "not exclusively MS1 profile spectra; native PeakBot benchmark blocked"
+    ]
+  },
+  "script_sha256": "c31bc57c38674086d395768f45fddc51e2f4cd35bfe5865284bad8fa43bbf55a",
+  "notes": [
+    "Parser/dummy smoke is not native profile-pipeline qualification.",
+    "Stored spectrum CVs override historical vendor filter strings.",
+    "Centroid interpolation cannot recover measured profile spectra.",
+    "Metadata PASS does not qualify label mapping or performance claims."
+  ]
+}

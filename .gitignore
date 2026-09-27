@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+uv-cache/
+runtime/peakbot-py38/
+logs/
+data/raw/
+results/*/patches/
+*.pickle
+*.download

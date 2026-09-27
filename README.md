@@ -1,10 +1,13 @@
 # PeakBot 独立核实记录
 
-**核实日期：** 2026-09-26  
-**状态：** 官方源码与示例已独立获取；隔离环境建立；单个真实 mzML 文件解析与预训练权重 API smoke 通过；尚未生成 PeakBot 候选峰或计算任何数据集指标。  
+**更新日期：** 2026-09-27（下方保留 2026-09-26 的历史 smoke 记录）
+
+**状态：** 完整 Zenodo ZIP 的 51 个 mzML 文件元数据审计完成：全部为 centroid，profile 文件数为 0；元数据完整性、官方源码版本和 5 个权重哈希通过。原版 profile-mode benchmark 判定 BLOCKED。已补齐 Git 子模块配置和服务器复核入口；未生成候选峰或计算性能指标。
 **用途：** 在不改动 `E:\论文\B0\cnn` 原项目、既有实验和封存测试集的前提下，判断 PeakBot 是否能作为真实 LC–HRMS 峰检测/定位的可复现对照。
 
 ## 原始论文与官方代码
+
+服务器操作入口见 [SERVER_NEXT.md](SERVER_NEXT.md)。独立仓库为 [lht1220/PeakBot](https://github.com/lht1220/PeakBot)，服务器根目录为 `/public/home/lulingli/lht/peakcnn/external_benchmarks/peakbot_v1/PeakBot`，不是 CNN 主项目。
 
 - 论文：Bueschl et al., *PeakBot: machine-learning-based chromatographic peak picking*, Bioinformatics, 2022。 [PubMed](https://pubmed.ncbi.nlm.nih.gov/35604083/) · [全文](https://pmc.ncbi.nlm.nih.gov/articles/PMC9237678/) · [DOI](https://doi.org/10.1093/bioinformatics/btac344)
 - 官方模型仓库：[christophuv/PeakBot](https://github.com/christophuv/PeakBot)
@@ -70,4 +73,4 @@ PeakBot 是面向 **LC–HRMS profile-mode 原始质谱**的峰拾取系统：�
 
 ## 当前结论
 
-PeakBot 值得继续做 **真实原始 mzML 的独立可行性核实**，因为项目数据包确有原始谱文件且官方解析器支持 mzML；目前已证明隔离环境能载入作者权重并解析一个真实文件（需透明处理 scan-time 键差异）。但目前还**没有完成真实候选峰推理、标签映射或对照实验**，也没有真实定位结果。能否成为论文中的定位基准，取决于验证集原始文件映射与可靠位置标签能否闭合。若标签无法提供可审计的峰中心/边界，PeakBot 可作为峰检测对照，但不能用于证明我们模型的定位优势。
+2026-09-26 的 smoke 只证明载入权重、解析文件和 dummy 推理可行。2026-09-27 完整包审计发现 **51/51 文件为 centroid，0/51 文件为 profile**。审计原件见 [完整包报告](results/00_preflight/zenodo_archive_20260927_v1/report.json)，结论及选项见 [数据准入结论](results/00_preflight/ASSESSMENT_2026-09-27.md)。必须先取得合格 profile 输入，才能讨论原版真实候选推理；是否能作定位基准还需要独立可靠峰位真值。不得从 dummy 推理或解析成功直接推导模型适用。
