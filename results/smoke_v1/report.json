@@ -1,0 +1,41 @@
+{
+  "protocol": "peakbot-mzml-runtime-smoke-v1",
+  "scope": "one raw mzML parser check plus one dummy tensor inference; no labels or metrics",
+  "python": "3.8.20",
+  "tensorflow": "2.5.0",
+  "mzml": "E:\\论文\\PeakBot_可复现性核实_2026-09-26\\data\\smoke\\161010_10_Stich_14_T.mzML",
+  "checkpoint": "E:\\论文\\PeakBot_可复现性核实_2026-09-26\\source\\PeakBot_Example\\PreTrainedModels\\PBmodel_MTBLS1358.model.h5",
+  "ms1_scan_count": 2524,
+  "rt_min_seconds": 0.221198658,
+  "rt_max_seconds": 1471.0023,
+  "first_scan_peak_count": 1445,
+  "mzml_compatibility_shim": "map pymzml 'scan time' lookup to mzML 'scan start time'; source is minutes and upstream parser converts to seconds",
+  "dummy_input_shape": [
+    1,
+    32,
+    128,
+    1
+  ],
+  "output_shapes": [
+    [
+      1,
+      6
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      4
+    ]
+  ],
+  "outputs_finite": [
+    true,
+    true,
+    true
+  ],
+  "labels_read": false,
+  "validation_metrics_computed": false,
+  "test_data_read": false
+}
